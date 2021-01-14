@@ -1,0 +1,97 @@
+Ciclo for:
+  Un ciclo es basicamente algo que se repite, en programacion este concepto es muy util cuando
+  se necesitan hacer ciertas tareas una cantidad determinada de veces, o hasta que una condicion
+  no se cumpla.
+
+  La forma de crear un ciclo for es primero agregando la palabra clave for, luego, entre parentesis
+  las tres "cosas" que se necesitan para que el ciclo for funcione como queremos, por ultimo entre
+  llaves van a estar las tareas que se van a realizar hasta que el ciclo se cumpla. Ejemplo:
+
+  for (valor inicial; condicion o valor final; actualizar la variable contadora) {
+    // tareas que se ejecutan en cada iteracion
+  }
+
+  Como se puede observar, un ciclo for tiene tres expresiones, las cuales son:
+    - La declaracion de una variable con un valor inicial, que servira como "punto de partida" y
+      que en cada iteracion deberia modificarse, de lo contrario seguramente el ciclo no funcionara
+      como se espera.
+
+    - La condicion para que el ciclo termine su ejecucion, la mayoria de las veces esta condicion
+      esta ligada con la variable contadora declarada anteriormente. Esta condicion es importante
+      si no se desea que el ciclo itere infinitamente, lo que en programacion es un error fatal!
+    
+    - El aumento o decremento de la variable contadora, esto va a ser clave para saber cuantas
+      veces mas el ciclo debe funcionar.
+  Ejemplo:
+
+  for (var i = 1; i <= 10; i++) {
+    console.log(`La variable i ahora es igual a: ${i}`);
+  }
+
+  Este es quizas un clasico ejemplo para demostrar el funcionamiento de un ciclo for, aqui
+  simplemente se iguala la variable contadora "i" a 1, luego la condicion de fin de ciclo es
+  "cuando i deje de ser menor o igual que 10" o "cuando i sea mayor a 10", y para que este ciclo no
+  se vuelva infinito logicamente la variable contadora debe aumentar, por ultimo dentro del ciclo
+  solo se esta mostrando el valor de la variable i en cada "vuelta" o iteracion.
+
+
+
+Operador &&:
+  El operador "Y", es el que une dos expresiones para ser evaluadas como una sola, basicamente este
+  operador retornara verdadero si ambas expresiones son verdaderas, de lo contrario cualquier otra
+  combinacion de valores dara falso (true y false, false y true, false y false).
+  Ejemplo:
+
+  var a = 1, b = 2;
+
+  if (a === b && b % 2 === 0) {
+    console.log("a es igual a b, y b es un numero par");
+  }
+  else if (a !== b && b % 2 === 0) {
+    console.log("a es distinto de b, pero b es un numero par");  // Retorna esta opcion
+  }
+  else if (a === b && b % 2 === 1) {
+    console.log("a es igual a b, y b es un numero impar");
+  }
+  else {
+    console.log("a es distinto de b, y b es un numero impar");
+  }
+
+  En este ejemplo, se hace una comparacion de dos variables (a y b), contemplando cada caso posible
+  segun la primera condicion, hay que notar que todas las condiciones tienen un operador &&, por lo
+  tanto para cada condicion es necesario que las dos expresiones se cumplan, de lo contrario se
+  muestra un mensaje explicando que ambas condiciones son falsas.
+
+
+
+Operador ||:
+  El operador "O" une dos expresiones al igual que el operador visto anteriormente, pero con la
+  diferencia en que este operador solo necesita que una de las dos expresiones sea verdadera,
+  dejando solo un posible caso en donde la expresion resultante sera falsa (false o false).
+  Ejemplo:
+
+  var a = 4, b = 2;
+
+  if (a < b || a === b + b) {
+    console.log("a es menor que b, o a es igual a b por 2");
+  }
+
+  En este ejemplo se declaran dos variables (a y b), y se pregunta si una es menor que la otra, o
+  si a es igual a la suma de la variable b con la variable b, si bien la que se cumple es la
+  segunda expresion pero no la primera, como ambas expresiones estan unidas por el operador ||, 
+  el codigo que esta dentro se mostrara de todas formas.
+
+
+
+Operador !:
+  Este operador conocido como "NO" es tan sencillo como pensar en un panqueque, ya que lo que hace
+  es "dar vuelta" o cambiar un valor booleano a su opuesto, es decir, si una expresion es
+  verdadera, este operador la hara falsa, y viceversa.
+  Ejemplos:
+
+  var a = 10;
+
+  !(a === 1) // Retornara true, ya que al tener el operador "!", devuelve su valor booleano opuesto
+
+  !(!(a === 1)) // Retornara false, ya que se esta retornando "lo opuesto de lo opuesto"
+  

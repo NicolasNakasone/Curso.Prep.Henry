@@ -1,0 +1,184 @@
+Variables:
+  Las variables son como cajas en donde se pueden guardar ciertas "cosas", en la programacion estas
+  cosas pueden ser, por ejemplo:
+  un numero 1, una letra "a", uno de los valores llamados booleanos que pueden ser true o false
+  (verdadero o falso), otra variable (como si pusieramos una caja dentro de otra), o podemos
+  incluso dejar la caja o variable vacia, entre otras cosas.
+
+  Y al igual que con una caja, a una variable le podemos guardar algo, "sacar" ese algo, y guardar
+  otra cosa.
+
+  En programacion, las variables deben siempre tener un nombre y empezar con la palabra "var", para
+  que nuestra computadora sepa que estamos escribiendo una variable. Ejemplos:
+  var saludo = "Hola!";
+  var num1 = 25;
+  var verd = true;
+
+  var vacia;
+
+  Por si no lo notaste, cuando una variable esta vacia, no es necesario escribir el signo igual,
+  lo que si seria necesario o correcto seria darle un valor a nuestra variable mas adelante.
+
+  var numero2 = num1;
+
+  Aqui, la variable llamada "numero2" esta guardando otra variable llamada "num1", que si revisamos
+  mas arriba vemos que la variable existe y guarda el numero 25.
+  ¡NO asignes a una variable algo que no existe!
+
+  Para hacer un correcto uso, vamos a usar la variable "vacia" para asignarle algo:
+
+  vacia = "Ya no estoy vacia!";
+
+  Ahora esta variable contiene una cadena de texto! (Nota que como la variable ya se declaro, no es
+  necesario escribir la palabra "var" antes del nombre de la variable, ya que esto solo se hace
+  cuando estamos creando o definiendo a la variable).
+
+  Algunas cosas importantes a tener en cuenta a la hora de crear una variable:
+    - El nombre de una variable no debe tener espacios en blanco ni guiones medios, como: "var una
+      variable" o "var una-variable", nombres como estos ocasionarian un error.
+
+    - El nombre de una variable no debe comenzar con un numero, como "var 1numero".
+
+    - Ademas de los espacios en blanco o los guiones, el nombre de una variable no debe comenzar
+      con simbolos especiales, como: ¡ ! ¿ ? " # $ % & / ( ) = \ . , ; - + * [ ] { } ~.
+
+    - Una variable no debe tener como nombre una palabra clave o reservada, como por ejemplo "var".
+
+    - Es recomendable que cuando se crea una variable se le coloque un nombre que la describa.
+
+  Algunos nombres correctos para una variable son: "var1", "_abc", "Hola". Como habras notado el
+  unico simbolo que se permite es el guion bajo.
+
+
+
+Strings:
+  Las strings o cadenas de texto son basicamente una fila de caracteres, que empiezan y terminan
+  con comillas simples, dobles, o acentos invertidos. Ejemplos:
+  "Hola, adios"
+  'Hola soy un string!'
+
+  ´1 es menor que 2´
+
+  Si notamos, en una cadena de texto tambien se pueden escribir numeros, ya que como se dijo
+  anteriormente, un string es una fila o secuencia de caracteres, por lo tanto cualquier letra,
+  numero, o simbolo puede ser un string (siempre y cuando este entre comillas).
+
+
+
+Funciones:
+  Se debe pensar en las funciones como si se hablara de una accion, como ser una receta para
+  preparar una comida, o sumar dos numeros, o saludar.
+
+  Quizas la principal utilidad que tienen las funciones es que solo se deben crear una vez, y
+  luego solo es necesario llamar o invocar a la funcion (escribir su nombre), para que estas
+  realicen sus tareas, sin necesidad de estar indicandoles que tareas deben hacer cada vez que se
+  las llame.
+
+  Una de las formas para crear una funcion es colocando primero la palabra clave "function",
+  seguido del nombre de la funcion, luego un par de parentesis, y al final un par de llaves.
+  Ejemplo:
+  
+  function funcion_de_prueba(argumentos) {
+    // Tareas que realiza la funcion
+    return "tarea finalizada";
+  }
+
+  Como se puede observar una funcion tiene varias partes, y son las siguientes:
+    - La palabra "function" es la que va a indicar que lo que sigue es una funcion.
+
+    - El nombre de la funcion sirve para despues poder hacer lo que se conoce como invocar o llamar
+      a la funcion.
+      (Los nombres de las funciones siguen las mismas reglas que los nombres de variables).
+
+    - Los argumentos son como decir "el algo" o "el alguien" que se necesita para cumplir con las
+      tareas de la funcion, estos pueden guardar un valor, compararse o operar entre si o junto con
+      variables. (Tambien existen funciones que no necesitan argumentos).
+
+    - Dentro de la funcion, es donde los argumentos se vuelven importantes, ya que estos ayudaran
+      a que la funcion cumpla su proposito.
+
+    - Por ultimo, la mayoria de las funciones usan la palabra clave "return" o retornar, que
+      vendria a ser la tarea terminada.
+  
+  Ejemplos:
+  function bienvenida (persona) {
+    console.log(`Hola ${persona}!`);
+  }
+
+  bienvenida("Nico")  // Retorna Hola Nico!
+
+  function sumar (num1, num2) {
+    return num1 + num2;
+  }
+
+  suma(1,2)  // Retorna 3
+
+
+Declaraciones if:
+  Las declaraciones if son algo que aplicamos en nuestra vida diariamente, cuando pensamos o
+  decimos:
+    - "Si duermo 4 horas al dia, entonces mañana no me levantare temprano".
+    - "Si apruebo el examen, entonces voy de vacaciones, sino no veo tele".
+    - "Si gano 40 pesos, entonces me compro 2 chocolates grandes, sino si gano 20 pesos, entonces
+      me compro 2 chocolates medianos, sino no me compro nada".
+  Las declaraciones if empiezan con la palabra clave "if", seguida por una condicion (entre
+  parentesis) que se evalua como verdadera o falsa, seguido por un par de llaves, y por ultimo por
+  las acciones que se realizaran dependiendo del resultado de la condicion:
+
+  if (condicion) {
+    // Si la condicion es verdadera pasa esto
+  }
+  else {
+    // Sino pasa esto
+  }
+
+  Tambien existen las declaraciones de la forma: if - else if - else:
+
+  if (condicion) {
+    // Si la condicion es verdadera pasa esto
+  }
+  else if (otra condicion) {
+    // Sino si otra condicion es verdadera pasa esto
+  }
+  else {
+    // Sino pasa esto
+  }
+
+  Ejemplo:
+
+  var clima = "soleado";
+
+  if (clima === "nublado") {
+    console.log("Hace frio afuera");
+  }
+  else if (clima === "soleado") {
+    console.log("Esta caluroso");
+  }
+  else {
+    console.log( "No salir sin un paraguas");
+  }
+
+  En este ejemplo, se pregunta como esta el clima usando la variable "clima", la cual tiene
+  asignada el valor "soleado", primero se pregunta si "clima" es igual a "nublado" se responde
+  "Hace frio afuera", sino si el clima es igual a "soleado" se responde "Esta caluroso", si la
+  varible clima no tuviera ninguna de las dos opciones anteriores se responde "No salir sin
+  un paraguas".
+
+
+
+Valores booleanos:
+  Los valores booleanos son algo sencillo de entender, es tan simple como decir si o no, blanco o
+  negro, 0 o 1 (hablando de numeros binarios), vienen de la mano con el concepto de declaraciones
+  if, ya que al evaluar una condicion si esta es "true" se ejecutan las tareas dentro de esa
+  porcion o bloque de codigo, si la condicion es "false" se ejecutan las tareas del bloque que
+  viene despues.
+
+  Ejemplos:
+
+  var a = 1, b = 2;
+
+  a === b // Retorna false
+
+  a < b // Retorna true
+
+  b % 2 !== 1 // Retorna true
