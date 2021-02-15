@@ -1,0 +1,42 @@
+Arrays:
+  Los arrays o arreglos son listas de datos, es como imaginarse un tren en donde en cada vagon vive
+  "algo", en este caso es un dato. En un array pueden guardarse todo tipo de datos, numeros,
+  cadenas de texto, booleanos, otros arreglos, entre otras cosas.
+
+  Los arrays son muy utiles cuando se necesita tener mucha informacion guardada en un solo lugar
+  (algo que en programacion se requiere todo el tiempo). Un array se crea como si fuera una
+  variable, pero se iguala a los datos separados entre comas y encerrados entre corchetes.
+  Ejemplo:
+
+  var arr1 = [1, "hola", true, "3"];
+
+  La forma para acceder a un dato especifico de un array es tan simple como llamarlo por su indice,
+  el indice es una posicion numerica que se le otorga a cada dato del array para que tengamos una
+  manera de llamar al dato cuando nos sea necesario. 
+  (Es importante saber que el primer indice de un array siempre es 0).
+  Ejemplo:
+
+  arr1[1];  // Retorna "hola" porque es el segundo elemento
+
+  arr[4];  // Retorna undefined porque no existe un quinto elemento
+  
+  Una propiedad muy util para los arreglos es ".length" o longitud, la cual nos va a retornar el
+  tamaño o la cantidad de elementos que tiene nuestro array, en este caso usando de ejemplo el
+  array "arr1", nos daria el siguiente resultado: arr1.length // Nos retorna 4
+
+  Se pueden asignar elementos a un array, esto se logra simplemente nombrando el array, e indicando
+  la posicion donde queremos asignar a dicho elemento.
+  Ejemplo: 
+  
+  arr1[3] = false;
+
+  Ahora nuestro array fue modificado, asi tambien se podrian agregar elementos en posiciones
+  "vacias", lo que aumentaria el tamaño del array.
+  Ejemplo:
+
+  arr1[5] = undefined;  // Ahora la sexta posicion guarda "undefined"
+
+  Ahora nuestro array tiene seis elementos, y son: 1, "hola", true, "3", vacio, undefined. Como se
+  puede observar no es necesario agregar elementos en la posicion que sigue en la numeracion, las
+  posiciones sin elementos se cuentan como vacias, y si quisieramos ver si estas posiciones
+  retornan algo nos daremos cuenta de que retornan undefined. 
