@@ -1,0 +1,17 @@
+Callbacks:
+  En JavaScript, las funciones son tratadas como lo que se conoce como "funciones de primera clase"
+  o "first class functions", lo que permite que se puedan definir funciones en variables, o usar 
+  una funcion como argumento de otra funcion, o retornar una funcion dentro de otra funcion.
+  Ejemplos:
+
+  var saludar = function (nombre) {
+    return `Hola ${nombre}`;
+  }
+
+  function invocarSaludo(cb, nombre) {
+    return cb(nombre);
+  }
+
+  De esta forma, al llamar a "invocarSaludo", se deberan pasar el nombre de la funcion, en este
+  caso "saludar", y el nombre que servira de argumento para la funcion "saludar", de esta forma
+  "invocarSaludo" funcionara correctamente.

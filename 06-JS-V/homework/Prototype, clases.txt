@@ -1,0 +1,91 @@
+Prototipos:
+  Cuando se crean clases en JavaScript, estas pueden tener metodos propios gracias a la propiedad
+  ".prototype", que se crean cuando se define la clase, con la finalidad de ahorrar codigo y
+  permitir que los objetos de esa clase puedan usar estos metodos sin necesidad de definirlos
+  cada vez que creemos un objeto de esa clase.
+  Por ejemplo:
+
+  function Animal(animal, nombre, color) {
+    this.animal = animal;
+    this.nombre = nombre;
+    this.color = color;
+  }
+
+  Animal.prototype.queAnimalSoy = function () {
+    return `Hola soy un ${this.animal}!`;
+  }
+
+  var perro = new Animal("perro", "huesos", "negro");
+  var gato = new Animal("gato", "rayas", "naranja");
+
+  perro.queAnimalSoy(); // Retorna "Hola soy un perro!"
+
+  Como se puede observar, luego de crear la clase "Animal", se creo un metodo para el prototipo de
+  "Animal", que luego puede usarse con todos los objetos que sean de la clase "Animal".
+  Es importante saber que si un metodo no existe entrara en juego lo que se conoce como cadena de
+  prototipos o "prototype chain", que empezara a buscar en los prototipos ancestros, hasta llegar
+  al prototipo en el nivel mas alto, si es que este metodo no esta en este prototipo recien se dara
+  un error de tipeo.
+
+
+
+Constructores:
+  En JavaScript existen tres formas para crear clases nuevas y son las siguientes:
+  - Tradicional: Esta forma consiste en usar una "funcion constructora", que luego servira para
+    crear objetos de la misma clase. Al ser una funcion, esta puede recibir parametros que se
+    usaran como valores para las propiedades de los objetos.
+    Ejemplo:
+
+    function Animal(animal, nombre, color) {
+      this.animal = animal;
+      this.nombre = nombre;
+      this.color = color;
+
+      Animal.prototype.queAnimalSoy = function () {
+        return `Hola soy un ${this.animal}!`;
+      }
+    }
+
+  - Object.create(): Este metodo proviene del prototipo "Object", y sirve para crear objetos en
+    base al objeto que se pase como parametro, el objeto resultante tendra como prototipo al objeto
+    que se uso como argumento del metodo. Si bien cuando se quieran observar las propiedades o
+    metodos del nuevo objeto, parecera que el objeto esta vacio, solo bastara con tratar de invocar
+    alguna de las propiedades para notar que estas existen para este objeto.
+    Ejemplo:
+
+    var Animal = {
+      animal: undefined,
+      nombre: undefined,
+      color: undefined
+      queAnimalSoy: function () {
+        return `Hola soy un ${this.animal}!`;
+      }
+    }
+
+    var perro = Object.create(Animal);
+
+    En este caso no se cuenta con la funcion constructora, por lo tanto no se pueden pasar como
+    argumentos los valores para las propiedades del objeto, por lo tanto se deberan definir una por
+    una.
+
+    - Clases ES6: Esta forma utiliza dos palabras claves "class", y "constructor" para la
+      construccion de nuevas clases, se empieza definiendo el nombre de la clase luego de la
+      palabra clave "class", entre corchetes se pueden definir parametros que haran de los valores
+      para las propiedades de los objetos luego de haber escrito la palabra clave "constructor", y
+      entre corchetes se escribe la referencia a las propiedades con la pseudovariable "this".
+      Si la clase tiene metodos propios, estos de deben definir luego de las propiedades dentro de
+      "constructor", al crear objetos de esa clase, se podran acceder a estos metodos gracias a la
+      "prototype chain".
+      Ejemplo:
+
+      class Animal {
+        constructor (animal, nombre, color) {
+          this.animal = animal;
+          this.nombre = nombre;
+          this.color = color;
+        }
+        saludar() {
+          return `Hola me llamo ${this.nombre}`;
+        }
+      }
+  

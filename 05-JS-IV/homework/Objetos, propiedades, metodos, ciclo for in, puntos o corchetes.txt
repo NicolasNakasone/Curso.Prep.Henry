@@ -1,0 +1,80 @@
+Objetos:
+  Los objetos son en cierta forma como los arrays, con la gran diferencia en que este tipo de dato
+  guarda mucha informacion acerca de una cosa,  mientras que un array guarda muchos elementos en un
+  solo lugar.
+  Un objeto se define con un nombre, con reglas similares a las que se debe seguir cuando se nombra
+  una variable, seguido de la informacion que el objeto va a contener (entre llaves), esta se debe
+  definir en pares de "clave: valor", estos pares deben estar separados entre si mediante comas.
+  (Importante saber que cada par debe separarse mediante comas y no por punto y coma).
+  Los nombres de las claves de un objeto no pueden repetirse, pero si hay una clave que se definio
+  mas de una vez, solo se tendra en cuenta la ultima.
+  Los valores que pueden guardar las claves de un objeto pueden ser de cualquier tipo (strings,
+  numeros, booleanos, arrays, funciones, o incluso otros objetos).
+  Por ejemplo:
+
+  persona = {
+    nombre: "Nicolas",
+    apellido: "Nakasone",
+    edad: 22,
+    saludar: function (a) {
+      return `Hola ${a}!`;
+    }
+  }
+
+Propiedades:
+  Las propiedades son informacion que se puede guardar en un objeto, estas podria decirse que son
+  "cualidades" o "caracteristicas" del objeto.
+  Se pueden acceder a las propiedades de un objeto de dos formas, con la notacion de puntos o con
+  la notacion de corchetes.
+  La notacion de puntos pide que se use el nombre del objeto, seguido de un punto y la clave de la
+  propiedad. Ejemplo: persona.nombre; // "Nicolas"
+  La notacion de corchetes pide la clave de la propiedad como un string, o una variable que guarde
+  la clave como string a la que se desee acceder. Esta notacion es muy util cuando se necesitan
+  hacer uso de variables para llamar a las propiedades, por lo tanto es mas probable que esta
+  notacion se use con variables, mas que con la propiedad pasada como un string.
+  Ejemplo:
+
+  persona.nombre; // Retorna "Nicolas"
+
+  var propiedad = "edad";
+  persona[propiedad];  // Retorna 22, porque propiedad guarda el string "edad"
+
+  Se pueden asignar nuevos valores a propiedades ya existentes, o añadir nuevas propiedades a un
+  objeto usando cualquiera de las notaciones vistas anteriormente.
+  Por ejemplo:
+
+  var propiedad = "email";
+
+  persona.[propiedad] = "nicolasnakasone70@gmail.com";
+
+  persona.password = "1234"
+
+  Tambien se pueden eliminar propiedades usando la palabra clave "delete" antes de la propiedad que
+  se eliminara. Si bien esta palabra clave funciona, se considera mejor practica declarar una
+  variable como undefined antes de optar por usar "delete".
+  Ejemplo:
+
+  persona.eliminar = true;
+
+  delete persona.eliminar;
+
+Metodos:
+  Otro tipo de informacion que se puede guardar en un objeto son las funciones, que al estar dentro
+  de un objeto pasan a llamarse metodos, se debe pensar en los metodos como "actividades" en las
+  que el objeto puede participar o "acciones" que el objeto puede realizar.
+  Ejemplo:
+
+  persona.saludar("amigo"); // Retorna "Hola amigo!"
+
+  Para definir nuevos metodos se usan las mismas reglas que con las propiedades.
+  Ejemplo:
+  
+  persona.sayHi = function (a) {
+    return `Hi ${a}!`;
+  }
+
+  var nombre = "Vale", metodo = "sayHi";
+
+  persona[metodo](nombre); // Retornara "Hi Vale!"
+
+  (Para eliminar metodos se puede usar la palabra clave delete al igual que con las propiedades).
